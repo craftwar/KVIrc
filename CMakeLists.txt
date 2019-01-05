@@ -34,7 +34,7 @@
 ###############################################################################
 
 # Minimum CMake version
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.13)
 
 # Name of the project
 project(kvirc)
@@ -266,6 +266,7 @@ else()
 				#/GL causes compilation error (mix static and dynamic link lib)
 				set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /O2 /Gw")
 				set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /O2 /Gw")
+				add_link_options("/LTCG")
 			else()
 				set(CMAKE_CXX_FLAGS "-O3")
 				set(CMAKE_C_FLAGS "-O3")
